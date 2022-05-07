@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class="row my-5">
+    <div class="col-lg-4 col-md-6 col-sm-10 mx-auto">
+       <div class="card">
+          <div class="text-center">
+            <img src="../../assets/logo.webp" width="150px" height="150px">
+          </div>
+          <div>
+            <form [formGroup]="signupForm" (ngSubmit)="submit()">
+
+              <div class="mx-5 have-input">
+                <i class="fa fa-envelope my-auto" aria-hidden="true"></i>
+                <input class="form-control" type="text" :placeholder="{{'name'|translate}}"  formControlName="userName">
+              </div>
+              <div class="form-text mx-5 my-0"
+              *ngIf="signupForm.get('userName')?.invalid && signupForm.get('userName')?.touched">{{'validation'|translate}}</div>
+
+              <div class="mx-5 have-input">
+                <i class="fa fa-lock my-auto" aria-hidden="true"></i>
+                <input class="form-control" type="password" :placeholder="{{'pass'|translate}}"  formControlName="password">
+                <i class="fa fa-eye-slash" #eyepass aria-hidden="true" (click)="togglePassword(eyepass)"></i>
+              </div>
+              <div class="form-text mx-5 my-0"
+              *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">{{'validation'|translate}}</div>
+
+              <div class="mx-5 have-input">
+                <i class="fa fa-lock my-auto" aria-hidden="true"></i>
+                <input class="form-control" type="password" :placeholder="{{'confirmPass'|translate}}"  formControlName="confirmPassword">
+                <i class="fa fa-eye-slash" #eyeConfirmPass aria-hidden="true" (click)="toggleConfirmPassword(eyeConfirmPass)"></i>
+              </div>
+              <div class="form-text mx-5 my-0"
+              *ngIf="signupForm.get('confirmPassword')?.invalid &&
+                     signupForm.get('confirmPassword')?.touched">{{'validation'|translate}}</div>
+
+              <div class="form-text mx-5 my-0"
+                     *ngIf="(signupForm.get('confirmPassword')?.touched && signupForm.get('confirmPassword')?.value != signupForm.get('password')?.value)">{{'match'|translate}}</div>
+              <div class="mx-5 have-input">
+                <i class="fa fa-envelope my-auto" aria-hidden="true"></i>
+                <input class="form-control" type="email" :placeholder="{{'email'|translate}}"  formControlName="email">
+              </div>
+              <div class="form-text mx-5 my-0"
+              *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">{{'validation'|translate}}</div>
+
+
+              <div class="mx-5 have-input">
+                <i class="fa fa-envelope my-auto" aria-hidden="true"></i>
+                <input class="form-control" type="email" :placeholder="{{'phone'|translate}}"  formControlName="phone">
+              </div>
+              <div class="form-text mx-5 my-0"
+              *ngIf="signupForm.get('phone')?.invalid && signupForm.get('phone')?.touched">{{'validation'|translate}}</div>
+
+
+              <div class="mx-5 contain-btn">
+                <button class="btn w-100" [disabled]="signupForm.invalid">{{'signup'|translate}}</button>
+              </div>
+            </form>
+          </div>
+       </div>
+    </div>
+  </div>
+</div>
+

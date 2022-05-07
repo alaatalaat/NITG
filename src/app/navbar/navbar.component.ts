@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { ViewChild ,ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.scss']
 })
-export class AppComponent {
+export class NavbarComponent implements OnInit {
   title = 'NITG';
   textDir: string = 'ltr';
   currentLang ?: string;
@@ -35,6 +34,5 @@ export class AppComponent {
 
   ngOnInit(): void {
   }
+
 }
-
-

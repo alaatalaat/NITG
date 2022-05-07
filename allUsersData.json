@@ -1,0 +1,28 @@
+{
+  "allUsers": [
+    {
+      "userName": "alaa",
+      "password": "1234#",
+      "confirmPassword": "1234#",
+      "email": "alaatalat40@gmail.com",
+      "phone": "01120845345",
+      "id": 1
+    },
+    {
+      "userName": "hamada",
+      "password": "1234#",
+      "confirmPassword": "1234#",
+      "email": "hamada@yahoo.com",
+      "phone": "01090344522",
+      "id": 2
+    },
+    {
+      "userName": "ali",
+      "password": "123456!",
+      "confirmPassword": "123456!",
+      "email": "ali@yahoo.com",
+      "phone": "01120845323",
+      "id": 3
+    }
+  ]
+}

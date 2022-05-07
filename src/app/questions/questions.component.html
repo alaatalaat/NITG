@@ -1,0 +1,32 @@
+<div class="container mt-5" *ngIf="currentQuiz<10">
+  <div class="row">
+    <div class="col-sm-10 col-md-6 mx-auto text-center py-2">
+      <p class="m-0">{{currentQuiz+1}} من {{quizzes.length}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-10 col-md-6 mx-auto py-4">
+      <div>
+        <h4>{{quizzes[rendomiz].question}}</h4>
+      </div>
+      <div>
+        <ul class="list-group" *ngFor="let ans of quizzes[rendomiz].answer">
+
+          <li class="list-group-item mt-2" appBackground [correctAnswer]="ans.correct">
+            <input type="radio" name="options" (change)="onAnswer(ans.correct)" [disabled]="answerSelected">
+            {{ans.option}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row mt-2" *ngIf="currentQuiz>=10">
+    <div class="col-sm-10 col-md-6 mx-auto px-0">
+      <button class="btn" (click)="showResult()">النتيجة</button>
+      <span class="mx-2" *ngIf="result">جاوبت صح : {{this.correctAnswers}} | جاوبت غلط : {{this.incorrectAnswers}}</span>
+    </div>
+  </div>
+</div>

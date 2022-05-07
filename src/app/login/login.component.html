@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row my-5">
+    <div class="col-lg-4 col-md-6 col-sm-10 mx-auto">
+       <div class="card">
+          <div class="text-center">
+            <img src="../../assets/logo.webp" width="150px" height="150px">
+          </div>
+          <div>
+            <form [formGroup]="loginForm" >
+              <div class="mx-5 have-input">
+                <i class="fa fa-envelope my-auto" aria-hidden="true"></i>
+                <input class="form-control" type="email" :placeholder="{{'email'|translate}}"  formControlName="email">
+              </div>
+              <div class="form-text mx-5 my-0"
+              *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">{{'validation'|translate}}</div>
+
+              <div class="mx-5 have-input">
+                <i class="fa fa-lock my-auto" aria-hidden="true"></i>
+                <input class="form-control" type="password" :placeholder="{{'pass'|translate}}"  formControlName="password">
+                <i class="fa fa-eye-slash" #eye aria-hidden="true" (click)="togglePassword(eye)"></i>
+              </div>
+              <div class="form-text mx-5 my-0"
+              *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">{{'validation'|translate}}</div>
+
+              <div class="mx-5 contain-btn">
+                <button class="btn w-100" (click)="submitLoginForm()" [disabled]="loginForm.invalid">{{'login'|translate}}</button>
+              </div>
+
+              <div class="row mx-5">
+                <button class="btn col-5 offset-2" style="height:40px;background:#395A9A;"  (click)="submitLogin()">
+                  <img height="100%" src="../../assets/facebook.png">
+                </button>
+                <button class="btn col-5  bg-light" style="height:40px;" #loginRef>
+                  <img height="100%" src="https://hrcdn.net/fcore/assets/google-colored-20b8216731.svg">
+                </button>
+              </div>
+
+            </form>
+          </div>
+       </div>
+    </div>
+  </div>
+</div>
+
+
+

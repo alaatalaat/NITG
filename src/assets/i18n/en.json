@@ -1,0 +1,11 @@
+{
+  "name":"User Name",
+  "pass":"Password",
+  "confirmPass":"Confirm Password",
+  "email":"Email",
+  "phone":"Phone",
+  "signup":"Signup",
+  "validation":"This field is required",
+  "login":"Login",
+  "match" :"Must enter same password"
+}
